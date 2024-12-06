@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>People Counter</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
   </head>
   <body>
     <header>
@@ -27,7 +31,7 @@
         <button>Count People</button>
 
         <label for="file-upload">Upload Image</label>
-        <input type="file" id="file-upload"/>
+        <input type="file" id="file-upload" />
       </div>
     </div>
 
@@ -54,5 +58,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>

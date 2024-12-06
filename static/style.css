@@ -1,0 +1,195 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 70px auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100vh;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/010/168/006/original/artificial-intelligence-neural-network-online-business-and-communication-3d-woman-head-rotating-animation-4k-seamless-loop-video.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+header {
+  grid-column: 1 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+header nav {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  grid-column: 1 / 5;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-box img {
+  border: 3px dashed gold;
+  border-radius: 10px;
+  max-width: 700px;
+  max-height: 700px;
+  object-fit: contain;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  z-index: 1;
+}
+
+.button-container button,
+label {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(0, 150, 150);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-container button:hover,
+label:hover {
+  background-color: #333;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+.result-box {
+  background-color: rgb(150, 150, 150);
+  width: 300px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#about,
+#images {
+  grid-column: 1 / 5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+#about h1,
+#images h1 {
+  color: white;
+  margin: 0;
+  font-size: 5rem;
+}
+
+#about p {
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  margin-top: 20px;
+  padding: 30px;
+  background-color: rgba(100, 100, 100, 0.95);
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  border: 3px solid white;
+  font-family: "Times New Roman";
+  font-style: italic;
+  text-align: justify;
+  min-height: 150px;
+}
+
+#image-gallery {
+  display: grid;
+  margin-top: 25px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: rgba(100, 100, 100, 0.95);
+  position: relative;
+  border-radius: 20px;
+  border: 3px solid white;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 3px solid white;
+  border-radius: 70px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 2;
+}
