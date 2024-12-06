@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>People Counter</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#images">IMAGES</a>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+      </nav>
+    </header>
+
+    <div id="home">
+      <div class="background-image-section">
+        <div class="image-box" id="image-box">
+          <p>No uploaded image</p>
+        </div>
+
+        <div id="result" class="result-box">Number of people detected: ()</div>
+      </div>
+
+      <div class="button-container">
+        <button>Count People</button>
+
+        <label for="file-upload">Upload Image</label>
+        <input type="file" id="file-upload"/>
+      </div>
+    </div>
+
+    <div id="images" hidden>
+      <h1>Images</h1>
+      <div id="image-gallery" class="image-gallery"></div>
+    </div>
+
+    <div id="about" hidden>
+      <h1>About us</h1>
+      <p>
+        We are a group of students passionate about Artificial Intelligence and
+        dedicated to exploring its potential. Our current project focuses on
+        utilizing deep learning techniques to count people from an image file.
+        Through our work, we aim to showcase the power of AI in real-world
+        applications. As we continue to improve and evolve our project, we plan
+        to implement better models, enable video capture and counting, and
+        develop real-time analysis capabilities to enhance the overall
+        performance and versatility of the system. <br />
+        <br />
+        For more information or inquiries, feel free to contact us!
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  </body>
+</html>
