@@ -12,9 +12,9 @@
   <body>
     <header>
       <nav>
-        <a href="#images">IMAGES</a>
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
+        <a href="#images" onclick="showSection('images')">IMAGES</a>
+        <a href="#home" onclick="showSection('home')">HOME</a>
+        <a href="#about" onclick="showSection('about')">ABOUT</a>
       </nav>
     </header>
 
@@ -28,10 +28,10 @@
       </div>
 
       <div class="button-container">
-        <button>Count People</button>
+        <button onclick="countPeople()">Count People</button>
 
         <label for="file-upload">Upload Image</label>
-        <input type="file" id="file-upload" />
+        <input type="file" id="file-upload" onchange="uploadImage(event)" />
       </div>
     </div>
 
