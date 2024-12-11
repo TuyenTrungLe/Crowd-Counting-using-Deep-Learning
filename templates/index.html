@@ -24,11 +24,13 @@
           <p>No uploaded image</p>
         </div>
 
-        <div id="result" class="result-box">Number of people detected: ()</div>
+        <div id="result" class="result-box">Estimated number of people:</div>
       </div>
 
       <div class="button-container">
-        <button onclick="countPeople()">Count People</button>
+        <button id="estimate-button" onclick="estimate()" disabled>
+          Estimate Number of People
+        </button>
 
         <label for="file-upload">Upload Image</label>
         <input type="file" id="file-upload" onchange="uploadImage(event)" />
