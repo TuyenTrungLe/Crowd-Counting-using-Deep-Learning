@@ -11,8 +11,8 @@ from FeatureExtractor import FeatureExtractor
 from CustomRegressionModel import CustomRegressionModel
 
 
-CSRNET_CHECKPOINT_PATH = "Model/weights_pschaus.npz"
-REGRESSION_MODEL_CHECKPOINT_PATH = "Model/checkpoint_regression_one_dense.pth"
+CSRNET_CHECKPOINT_PATH = "checkpoints/weights_pschaus.npz"
+REGRESSION_MODEL_CHECKPOINT_PATH = "checkpoints/checkpoint_regression_one_dense.pth"
 
 def load():
     # Load CSRNet model
