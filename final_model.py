@@ -14,9 +14,11 @@ from CustomRegressionModel import CustomRegressionModel
 CSRNET_CHECKPOINT_PATH = "checkpoints/weights_pschaus.npz"
 REGRESSION_MODEL_CHECKPOINT_PATH = "checkpoints/checkpoint_regression_one_dense.pth"
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 def load():
     # Load CSRNet model
-    CSRNet_model = CSRNet().cuda()
+    CSRNet_model = CSRNet().to(device)
 
     # Load the weights and checkpoints
     CSRNet_checkpoint = np.load(CSRNET_CHECKPOINT_PATH)
@@ -29,14 +31,14 @@ def load():
         param.requires_grad = False
 
     # Create Custom Regression model
-    regression_model = CustomRegressionModel(feature_extractor).cuda()
+    regression_model = CustomRegressionModel(feature_extractor).to(device)
 
     # Initialize Dense Layer with RandomNormal
     nn.init.normal_(regression_model.dense.weight, mean=1., std=0.001)
     nn.init.constant_(regression_model.dense.bias, 0)
 
     # Load the checkpoints
-    reg_model_checkpoint = torch.load(REGRESSION_MODEL_CHECKPOINT_PATH, weights_only=False)
+    reg_model_checkpoint = torch.load(REGRESSION_MODEL_CHECKPOINT_PATH, weights_only=False, map_location=device)
     reg_model_state_dict = reg_model_checkpoint['model_state_dict'] if 'model_state_dict' in reg_model_checkpoint else reg_model_checkpoint
     regression_model.load_state_dict(reg_model_state_dict)
     
@@ -69,9 +71,6 @@ def predict(image_path):
     
     # Set the model to evaluation mode
     model.eval()
-    
-    # Choose the device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     # Preprocess the input image
     input_image = preprocess_image(image_path)
